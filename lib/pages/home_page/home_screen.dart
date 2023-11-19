@@ -151,8 +151,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               fontWeight: FontWeight.w400,
             ),
           ),
-        SearchWeatherLoading() => const Center(
-            child: CircularProgressIndicator(),
+        SearchWeatherLoading() => Center(
+            child: ShimmerWidget(context: context),
           ),
         SearchWeatherSuccess(searchCityModel: SearchCityModel searchCity) =>
           Column(
