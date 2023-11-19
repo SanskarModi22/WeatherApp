@@ -20,17 +20,21 @@ class _WeatherPageState extends ConsumerState<ProfileScreen> {
 
     // Second variable to access the Logout Function
     final auth = ref.watch(authenticationProvider);
+    var user = data.currentUser!;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile Screen'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 80.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            CircleAvatar(
+              radius: 70,
+              backgroundImage: NetworkImage(user.photoURL.toString()),
+            ),
             Text(
-              'Signed in as: ${data.currentUser!.displayName}',
+              'Signed in as: ${user.displayName}',
               style: kCityTextStyle,
             ),
             CustomButton(

@@ -16,7 +16,6 @@ class NavigationBarWidget extends StatefulWidget {
 class _NavigationBarWidgetState extends State<NavigationBarWidget> {
   List pages = [
     const HomeScreen(),
-    const SearchScreen(),
     const ProfileScreen(),
   ];
   int currentIndex = 0;
@@ -58,17 +57,6 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
                 color: Colors.black38,
               ),
               label: 'Home',
-            ),
-            NavigationDestination(
-              selectedIcon: Icon(
-                CupertinoIcons.search,
-                color: AppColor.appTextColor,
-              ),
-              icon: Icon(
-                CupertinoIcons.search,
-                color: Colors.black38,
-              ),
-              label: 'Search',
             ),
             NavigationDestination(
               selectedIcon: Icon(

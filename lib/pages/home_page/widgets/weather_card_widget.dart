@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/constants/color_const.dart';
 import 'package:weather_app/models/current_weather_model.dart';
+import 'package:weather_app/models/search_city_model.dart';
 import 'package:weather_app/pages/home_page/widgets/date_time_widget.dart';
 
 class WeatherCardWidget extends StatelessWidget {
@@ -9,7 +10,7 @@ class WeatherCardWidget extends StatelessWidget {
     required this.currentWeather,
   });
 
-  final CurrentWeatherModel currentWeather;
+  final SearchCityModel currentWeather;
 
   @override
   Widget build(BuildContext context) {

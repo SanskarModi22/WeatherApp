@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/constants/color_const.dart';
 import 'package:weather_app/models/current_weather_model.dart';
 import 'package:intl/intl.dart';
+import 'package:weather_app/models/search_city_model.dart';
 
 class DateTimeWidget extends StatelessWidget {
   const DateTimeWidget({
@@ -10,7 +11,7 @@ class DateTimeWidget extends StatelessWidget {
     required this.currentWeather,
   }) : super(key: key);
 
-  final CurrentWeatherModel currentWeather;
+  final SearchCityModel currentWeather;
 
   @override
   Widget build(BuildContext context) {

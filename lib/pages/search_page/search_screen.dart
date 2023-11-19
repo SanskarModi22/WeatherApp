@@ -85,9 +85,9 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                 ],
               ),
             ),
-            Expanded(
-              child: _buildSearchBarDataWidget(searchWeatherData),
-            ),
+            // Expanded(
+            //   child: _buildSearchBarDataWidget(searchWeatherData),
+            // ),
           ],
         ),
       ),

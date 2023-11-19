@@ -13,5 +13,6 @@ const kTempTextStyle = TextStyle(
 // Define a constant text style for "Sign In with Google" text.
 const kSignInWithGoogleTextStyle = TextStyle(
   fontSize: 20,
+  color: Colors.black,
   fontWeight: FontWeight.w500,
 );

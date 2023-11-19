@@ -24,10 +24,6 @@ Future<void> main() async {
   runApp(ProviderScope(child: MainApp()));
 }
 
-// final firebaseinitializerProvider = FutureProvider<FirebaseApp>((ref) async {
-//   return
-// });
-
 class MainApp extends ConsumerWidget {
   MainApp({super.key});
   final _appRouter = AppRouter();

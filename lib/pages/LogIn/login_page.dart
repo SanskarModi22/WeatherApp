@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -47,24 +48,41 @@ class _LoginPageState extends State<LoginPage> {
         child: Consumer(
           builder: (context, ref, child) {
             final auth = ref.watch(authenticationProvider);
-            return Padding(
-              padding: const EdgeInsets.all(15.0),
+            return Container(
+              decoration: const BoxDecoration(
+                  // gradient: LinearGradient(
+                  //   begin: Alignment.topCenter,
+                  //   end: Alignment.bottomCenter,
+                  //   colors: [
+                  //     Color(0xFF19C3FB),
+                  //     Color(0xFF1D71F2),
+                  //   ],
+                  //   stops: [0.0243, 0.9931],
+                  // ),
+                  // boxShadow: [
+                  //   BoxShadow(
+                  //     offset: Offset(-40, 60),
+                  //     blurRadius: 150,
+                  //     color: Color.fromRGBO(59, 38, 123, 0.7),
+                  //   ),
+                  // ],
+                  ),
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const Text(
-                      'NOVA Weather App',
-                      style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    // Image.asset(
-                    //   'assets/weather.png',
-                    //   height: 300,
+                    // const Text(
+                    //   'NOVA Weather App',
+                    //   style: TextStyle(
+                    //     fontSize: 25,
+                    //     color: Colors.black,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
                     // ),
+                    Image.asset(
+                      'assets/images/weather.png',
+                      height: 450,
+                    ),
                     const SizedBox(
                       height: 50,
                     ),
@@ -89,15 +107,15 @@ class _LoginPageState extends State<LoginPage> {
                                   Colors.white,
                                 ),
                               ),
-                              child: const Row(
+                              child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
                                 children: [
-                                  // SvgPicture.asset(
-                                  //   'assets/google-icon.svg',
-                                  //   width: 25,
-                                  // ),
-                                  Text(
+                                  Image.asset(
+                                    "assets/images/google-logo.png",
+                                    width: 35,
+                                  ),
+                                  const Text(
                                     'SignIn with Google',
                                     style: kSignInWithGoogleTextStyle,
                                   ),
