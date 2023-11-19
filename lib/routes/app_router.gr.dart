@@ -9,10 +9,10 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:weather_app/pages/auth_check.dart' as _i1;
-import 'package:weather_app/pages/demo.dart' as _i2;
-import 'package:weather_app/pages/login_page.dart' as _i3;
-import 'package:weather_app/pages/weather_page.dart' as _i4;
+import 'package:weather_app/pages/LogIn/auth_check.dart' as _i1;
+import 'package:weather_app/pages/LogIn/login_page.dart' as _i2;
+import 'package:weather_app/pages/profile_page/weather_page.dart' as _i4;
+import 'package:weather_app/utils/navigation_bar_widget.dart' as _i3;
 
 abstract class $AppRouter extends _i5.RootStackRouter {
   $AppRouter({super.navigatorKey});
@@ -25,22 +25,22 @@ abstract class $AppRouter extends _i5.RootStackRouter {
         child: const _i1.AuthChecker(),
       );
     },
-    Demo.name: (routeData) {
-      return _i5.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i2.Demo(),
-      );
-    },
     LoginRoute.name: (routeData) {
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.LoginPage(),
+        child: const _i2.LoginPage(),
       );
     },
-    WeatherRoute.name: (routeData) {
+    NavigationBarWidget.name: (routeData) {
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.WeatherPage(),
+        child: const _i3.NavigationBarWidget(),
+      );
+    },
+    ProfileRoute.name: (routeData) {
+      return _i5.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i4.ProfileScreen(),
       );
     },
   };
@@ -61,21 +61,7 @@ class AuthChecker extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.Demo]
-class Demo extends _i5.PageRouteInfo<void> {
-  const Demo({List<_i5.PageRouteInfo>? children})
-      : super(
-          Demo.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'Demo';
-
-  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i3.LoginPage]
+/// [_i2.LoginPage]
 class LoginRoute extends _i5.PageRouteInfo<void> {
   const LoginRoute({List<_i5.PageRouteInfo>? children})
       : super(
@@ -89,15 +75,29 @@ class LoginRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.WeatherPage]
-class WeatherRoute extends _i5.PageRouteInfo<void> {
-  const WeatherRoute({List<_i5.PageRouteInfo>? children})
+/// [_i3.NavigationBarWidget]
+class NavigationBarWidget extends _i5.PageRouteInfo<void> {
+  const NavigationBarWidget({List<_i5.PageRouteInfo>? children})
       : super(
-          WeatherRoute.name,
+          NavigationBarWidget.name,
           initialChildren: children,
         );
 
-  static const String name = 'WeatherRoute';
+  static const String name = 'NavigationBarWidget';
+
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i4.ProfileScreen]
+class ProfileRoute extends _i5.PageRouteInfo<void> {
+  const ProfileRoute({List<_i5.PageRouteInfo>? children})
+      : super(
+          ProfileRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileRoute';
 
   static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }

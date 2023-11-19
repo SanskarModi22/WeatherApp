@@ -9,6 +9,7 @@ class AppRouter extends $AppRouter {
         // AutoRoute(page: Demo.page, initial: true),
         AutoRoute(page: AuthChecker.page, initial: true),
         AutoRoute(page: LoginRoute.page),
-        AutoRoute(page: WeatherRoute.page),
+        AutoRoute(page: ProfileRoute.page),
+        AutoRoute(page: NavigationBarWidget.page),
       ];
 }

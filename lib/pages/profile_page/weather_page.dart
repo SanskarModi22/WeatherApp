@@ -6,14 +6,14 @@ import 'package:weather_app/providers/auth_provider.dart';
 import 'package:weather_app/utils/custom_button.dart';
 
 @RoutePage()
-class WeatherPage extends ConsumerStatefulWidget {
-  const WeatherPage({super.key});
+class ProfileScreen extends ConsumerStatefulWidget {
+  const ProfileScreen({super.key});
 
   @override
   _WeatherPageState createState() => _WeatherPageState();
 }
 
-class _WeatherPageState extends ConsumerState<WeatherPage> {
+class _WeatherPageState extends ConsumerState<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final data = ref.watch(fireBaseAuthProvider);
@@ -21,6 +21,9 @@ class _WeatherPageState extends ConsumerState<WeatherPage> {
     // Second variable to access the Logout Function
     final auth = ref.watch(authenticationProvider);
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Profile Screen'),
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 80.0),
         child: Row(

@@ -3,8 +3,9 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:weather_app/pages/login_page.dart';
-import 'package:weather_app/pages/weather_page.dart';
+import 'package:weather_app/pages/home_page/widgets/navigation_bar_widget.dart';
+import 'package:weather_app/pages/LogIn/login_page.dart';
+import 'package:weather_app/pages/profile_page/weather_page.dart';
 import 'package:weather_app/providers/auth_provider.dart';
 import 'package:weather_app/utils/error_screen.dart';
 import 'package:weather_app/utils/loading_screen.dart';
@@ -23,7 +24,7 @@ class AuthChecker extends ConsumerWidget {
         print(data);
         // If authentication data is available
         if (data != null) {
-          return const WeatherPage(); // Show the HomePage widget
+          return const NavigationBarWidget(); // Show the HomePage widget
         } else {
           print("Kaise Ho");
           return const LoginPage(); // Show the LoginPage widget

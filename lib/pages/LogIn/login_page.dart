@@ -2,9 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:weather_app/constants/color_const.dart';
 import 'package:weather_app/constants/custom_style.dart';
-import 'package:weather_app/pages/weather_page.dart';
+import 'package:weather_app/pages/profile_page/weather_page.dart';
 import 'package:weather_app/providers/auth_provider.dart';
+import 'package:weather_app/repositories/auth_repo.dart';
 import 'package:weather_app/routes/app_router.gr.dart';
 
 @RoutePage()
@@ -25,28 +27,26 @@ class _LoginPageState extends State<LoginPage> {
     });
   }
 
+  Future<void> loginWithGoogle({required Authentication auth}) async {
+    loading(); // Start loading animation.
+    await auth.signInWithGoogle(context).whenComplete(() {
+      auth.authStateChange.listen((event) async {
+        if (event == null) {
+          loading(); // Stop loading animation.
+          return;
+        }
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColor.appBGColor,
       body: SafeArea(
         child: Consumer(
           builder: (context, ref, child) {
             final auth = ref.watch(authenticationProvider);
-
-            // Function to initiate Google login and handle loading.
-            Future<void> loginWithGoogle() async {
-              loading(); // Start loading animation.
-              await auth.signInWithGoogle(context).whenComplete(() {
-                auth.authStateChange.listen((event) async {
-                  if (event == null) {
-                    loading(); // Stop loading animation.
-                    return;
-                  }
-                });
-              });
-            }
-
             return Padding(
               padding: const EdgeInsets.all(15.0),
               child: Center(
@@ -75,9 +75,9 @@ class _LoginPageState extends State<LoginPage> {
                       child: !_isLoading
                           ? ElevatedButton(
                               onPressed: () async {
-                                await loginWithGoogle();
+                                await loginWithGoogle(auth: auth);
                                 AutoRouter.of(context)
-                                    .push(const WeatherRoute());
+                                    .push(const NavigationBarWidget());
                               },
                               style: ButtonStyle(
                                 shape: MaterialStateProperty.all(
