@@ -6,12 +6,13 @@ import 'package:weather_app/firebase_options.dart';
 import 'package:weather_app/routes/app_router.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions
         .currentPlatform, // Initialize Firebase using provided options
   );
   await dotenv.load(fileName: ".env");
-  runApp(MainApp());
+  runApp(ProviderScope(child: MainApp()));
 }
 
 // final firebaseinitializerProvider = FutureProvider<FirebaseApp>((ref) async {

@@ -12,7 +12,20 @@
           "package_name": "com.example.weather_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "422513023683-6jh69fmjsp6k56bg2575n74di3451c62.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.weather_app",
+            "certificate_hash": "af6eeb2591a305d2623a6708081ebea2cb2eafa8"
+          }
+        },
+        {
+          "client_id": "422513023683-ea2h3aruuhvlchesuce76uob6d7orcg8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCvxim_tMRLmv8e8OdpncR_NgjrcLd4_Kk"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422513023683-ea2h3aruuhvlchesuce76uob6d7orcg8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "422513023683-e9f4lnbkvoprogoukv0vg0jj9qss5suv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.weatherApp.RunnerTests"
+              }
+            }
+          ]
         }
       }
     }
