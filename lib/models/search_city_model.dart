@@ -10,6 +10,7 @@ SearchCityModel searchCityModelFromJson(String str) =>
 String searchCityModelToJson(SearchCityModel data) =>
     json.encode(data.toJson());
 
+// SearchCityModel class represents the structure of data fetched for a city
 class SearchCityModel {
   final Coord? coord;
   final List<Weather>? weather;
@@ -43,6 +44,7 @@ class SearchCityModel {
     this.cod,
   });
 
+  // Factory method to create a SearchCityModel object from JSON
   factory SearchCityModel.fromJson(Map<String, dynamic> json) =>
       SearchCityModel(
         coord: json["coord"] == null ? null : Coord.fromJson(json["coord"]),
@@ -64,6 +66,7 @@ class SearchCityModel {
         cod: json["cod"],
       );
 
+  // Convert SearchCityModel object to a JSON object
   Map<String, dynamic> toJson() => {
         "coord": coord?.toJson(),
         "weather": weather == null
@@ -84,6 +87,7 @@ class SearchCityModel {
       };
 }
 
+// Represents cloud data
 class Clouds {
   final int? all;
 
@@ -100,6 +104,7 @@ class Clouds {
       };
 }
 
+// Represents geographical coordinates
 class Coord {
   final double? lon;
   final double? lat;
@@ -120,6 +125,7 @@ class Coord {
       };
 }
 
+// Represents main weather information
 class Main {
   final double? temp;
   final double? feelsLike;
@@ -164,6 +170,7 @@ class Main {
       };
 }
 
+// Represents rain data
 class Rain {
   final double? the1H;
 
@@ -180,6 +187,7 @@ class Rain {
       };
 }
 
+// Represents system information
 class Sys {
   final String? country;
   final int? sunrise;
@@ -204,6 +212,7 @@ class Sys {
       };
 }
 
+// Represents weather information
 class Weather {
   final int? id;
   final String? main;
@@ -232,6 +241,7 @@ class Weather {
       };
 }
 
+// Represents wind information
 class Wind {
   final double? speed;
   final int? deg;

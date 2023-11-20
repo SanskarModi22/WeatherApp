@@ -26,9 +26,6 @@ class _WeatherPageState extends ConsumerState<ProfileScreen> {
     var user = data.currentUser!;
     return Scaffold(
       backgroundColor: AppColor.appBGColor,
-      // appBar: AppBar(
-      //   title: const Text('Profile Screen'),
-      // ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

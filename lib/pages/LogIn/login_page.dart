@@ -45,89 +45,60 @@ class _LoginPageState extends State<LoginPage> {
         child: Consumer(
           builder: (context, ref, child) {
             final auth = ref.watch(authenticationProvider);
-            return Container(
-              decoration: const BoxDecoration(
-                  // gradient: LinearGradient(
-                  //   begin: Alignment.topCenter,
-                  //   end: Alignment.bottomCenter,
-                  //   colors: [
-                  //     Color(0xFF19C3FB),
-                  //     Color(0xFF1D71F2),
-                  //   ],
-                  //   stops: [0.0243, 0.9931],
-                  // ),
-                  // boxShadow: [
-                  //   BoxShadow(
-                  //     offset: Offset(-40, 60),
-                  //     blurRadius: 150,
-                  //     color: Color.fromRGBO(59, 38, 123, 0.7),
-                  //   ),
-                  // ],
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(
+                    'assets/images/weather.png',
+                    height: 450,
                   ),
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    // const Text(
-                    //   'NOVA Weather App',
-                    //   style: TextStyle(
-                    //     fontSize: 25,
-                    //     color: Colors.black,
-                    //     fontWeight: FontWeight.bold,
-                    //   ),
-                    // ),
-                    Image.asset(
-                      'assets/images/weather.png',
-                      height: 450,
-                    ),
-                    const SizedBox(
-                      height: 50,
-                    ),
-                    // Display Google sign-in button when not loading.
-                    SizedBox(
-                      height: 75,
-                      width: 325,
-                      child: !_isLoading
-                          ? ElevatedButton(
-                              onPressed: () async {
-                                await loginWithGoogle(auth: auth);
-                                // ignore: use_build_context_synchronously
-                                AutoRouter.of(context)
-                                    .push(const NavigationBarWidget());
-                              },
-                              style: ButtonStyle(
-                                shape: MaterialStateProperty.all(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                ),
-                                backgroundColor: MaterialStateProperty.all(
-                                  Colors.white,
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  // Display Google sign-in button when not loading.
+                  SizedBox(
+                    height: 75,
+                    width: 325,
+                    child: !_isLoading
+                        ? ElevatedButton(
+                            onPressed: () async {
+                              await loginWithGoogle(auth: auth);
+                              // ignore: use_build_context_synchronously
+                              AutoRouter.of(context)
+                                  .push(const NavigationBarWidget());
+                            },
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15),
                                 ),
                               ),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Image.asset(
-                                    "assets/images/google-logo.png",
-                                    width: 35,
-                                  ),
-                                  const Text(
-                                    'SignIn with Google',
-                                    style: kSignInWithGoogleTextStyle,
-                                  ),
-                                ],
-                              ),
-                            )
-                          : const Center(
-                              child: CircularProgressIndicator(
-                                color: Colors.redAccent,
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.white,
                               ),
                             ),
-                    ),
-                  ],
-                ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Image.asset(
+                                  "assets/images/google-logo.png",
+                                  width: 35,
+                                ),
+                                const Text(
+                                  'SignIn with Google',
+                                  style: kSignInWithGoogleTextStyle,
+                                ),
+                              ],
+                            ),
+                          )
+                        : const Center(
+                            child: CircularProgressIndicator(
+                              color: Colors.redAccent,
+                            ),
+                          ),
+                  ),
+                ],
               ),
             );
           },

@@ -12,43 +12,23 @@ import 'package:weather_app/providers/searchcity/search_city_provider.dart';
 import 'package:weather_app/providers/searchcity/search_city_state.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
-  // void initState() {
-  //   super.initState();
-
-  //   loadedThreeHourlyData();
-  // }
-
-  // loadedData({required double lat, required double long}) {
-  //   Future.delayed(
-  //     Duration.zero,
-  //     () => ref
-  //         .read(currentWeatherProvider.notifier)
-  //         .currentWeather(lat.toString(), long.toString()),
-  //   );
-  // }
-
-  // loadedThreeHourlyData() {
-  //   Future.delayed(
-  //     Duration.zero,
-  //     () => ref
-  //         .read(threeHourlyWeatherProvider.notifier)
-  //         .threeHourlyWeather(name: 'agra'),
-  //   );
-  // }
   TextEditingController searchTextController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    // Fetches the weather data state using Riverpod's watch function
     SearchWeatherState searchWeatherData = ref.watch(searchCityWeatherProvider);
     final searchCity = ref.read(searchCityWeatherProvider.notifier);
     final data = ref.watch(fireBaseAuthProvider);
     String imgUrl = data.currentUser!.photoURL!;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColor.appBGColor,
@@ -62,6 +42,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               padding: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
               child: Column(
                 children: [
+                  // Search bar for entering city names
                   SearchBar(
                     controller: searchTextController,
                     elevation: MaterialStateProperty.all(0),
@@ -84,6 +65,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           ),
                         ),
                         onPressed: () {
+                          // Triggers city search when the search button is pressed
                           searchCity.searchCity(
                               name: searchTextController.text.trim());
                         },
@@ -97,6 +79,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ],
               ),
             ),
+            // Builds the UI based on the state of weather data
             _buildCurrentWeatherResult(searchWeatherData),
           ],
         ),
@@ -108,6 +91,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: switch (searchWeatherState) {
+        // Shows text when no city is searched yet
         SearchWeatherForm() => const Text(
             'Please search a city weather',
             style: TextStyle(
@@ -116,9 +100,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               fontWeight: FontWeight.w400,
             ),
           ),
+        // Shows loading indicator while fetching weather data
         SearchWeatherLoading() => Center(
             child: ShimmerWidget(context: context),
           ),
+        // Displays weather information when data is successfully fetched
         SearchWeatherSuccess(searchCityModel: SearchCityModel searchCity) =>
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -134,14 +120,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              // const WeatherForecast(),
+              // Weather forecast widget to be added here
             ],
           ),
+        // Shows error message when city entered doesn't exist
         SearchWeatherFailure(errorMessage: String _) => const Center(
             child: Padding(
               padding: EdgeInsets.only(top: 80.0),
               child: Text(
-                "City Entered doesnot exist.\n        Please try again!!",
+                "City Entered does not exist.\nPlease try again!!",
                 style: TextStyle(color: Colors.red, fontSize: 20),
               ),
             ),
