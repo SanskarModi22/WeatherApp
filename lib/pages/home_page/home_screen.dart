@@ -28,7 +28,6 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
-  @override
   // void initState() {
   //   super.initState();
 
@@ -52,7 +51,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   //         .threeHourlyWeather(name: 'agra'),
   //   );
   // }
-
+  TextEditingController searchTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     SearchWeatherState searchWeatherData = ref.watch(searchCityWeatherProvider);
@@ -66,7 +65,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     // CurrentWeatherState currentWeatherList = ref.read(currentWeatherProvider);
     // ThreeHourlyWeatherState threeHourlyWeatherDataList =
     //     ref.watch(threeHourlyWeatherProvider);
-    TextEditingController searchTextController = TextEditingController();
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColor.appBGColor,
