@@ -20,14 +20,14 @@ In the profile section, users can view their Google sign-in details along with a
 
 ## Install the APK
 
-You can install the Nova Weather App on your Android device by downloading the APK file from the following link:
+You can install the Weather App on your Android device by downloading the APK file from the following link:
 
 [Download Weather App APK](https://drive.google.com/file/d/1JgFJCNe0PN93HzKpfxBL0LwZwd1Y00vW/view?usp=drive_link)
 
 
 ## Screen Recording
 
-To get an overview of the Nova Weather App's features and functionality, you can watch a screen recording by following this link:
+To get an overview of the Weather App's features and functionality, you can watch a screen recording by following this link:
 
 [View Screen Recording](https://drive.google.com/file/d/1T_dRSXPJDlZViD6MTkht8GdyBuRQo2sf/view?usp=drive_link)
 
@@ -88,7 +88,7 @@ https://api.openweathermap.org/data/2.5/weather?id={city id}&appid={API key}
 
 ## Authentication
 
-Authentication within Nova Weather App is handled through Google Sign-In, using Firebase. The project includes the following components to manage authentication states:
+Authentication within Weather App is handled through Google Sign-In, using Firebase. The project includes the following components to manage authentication states:
 
 - **Authentication Provider:**(auth_provider) Responsible for authentication methods and user information.
 
