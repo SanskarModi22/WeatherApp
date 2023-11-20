@@ -1,11 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weather_app/constants/color_const.dart';
 import 'package:weather_app/constants/custom_style.dart';
-import 'package:weather_app/pages/profile_page/profile_page.dart';
 import 'package:weather_app/providers/auth_provider.dart';
 import 'package:weather_app/repositories/auth_repo.dart';
 import 'package:weather_app/routes/app_router.gr.dart';
@@ -94,6 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                           ? ElevatedButton(
                               onPressed: () async {
                                 await loginWithGoogle(auth: auth);
+                                // ignore: use_build_context_synchronously
                                 AutoRouter.of(context)
                                     .push(const NavigationBarWidget());
                               },

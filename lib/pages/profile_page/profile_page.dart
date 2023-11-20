@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather_app/constants/color_const.dart';
 import 'package:weather_app/constants/custom_style.dart';
-import 'package:weather_app/pages/LogIn/login_page.dart';
 import 'package:weather_app/providers/auth_provider.dart';
 import 'package:weather_app/routes/app_router.gr.dart';
 import 'package:weather_app/utils/custom_button.dart';
@@ -13,6 +12,7 @@ class ProfileScreen extends ConsumerStatefulWidget {
   const ProfileScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _WeatherPageState createState() => _WeatherPageState();
 }
 
@@ -44,6 +44,7 @@ class _WeatherPageState extends ConsumerState<ProfileScreen> {
             CustomButton(
               onTap: () async {
                 await auth.signOut();
+                // ignore: use_build_context_synchronously
                 AutoRouter.of(context).push(const LoginRoute());
               },
               text: 'Logout',

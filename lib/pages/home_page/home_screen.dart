@@ -137,7 +137,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               // const WeatherForecast(),
             ],
           ),
-        SearchWeatherFailure(errorMessage: String error) => const Center(
+        SearchWeatherFailure(errorMessage: String _) => const Center(
             child: Padding(
               padding: EdgeInsets.only(top: 80.0),
               child: Text(

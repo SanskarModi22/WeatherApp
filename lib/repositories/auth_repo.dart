@@ -31,6 +31,7 @@ class Authentication {
     } on FirebaseAuthException catch (e) {
       // If an exception (error) occurs during sign-in
       // Show an error dialog with the error message
+      // ignore: use_build_context_synchronously
       await showDialog(
         context: context,
         builder: (ctx) => AlertDialog(
