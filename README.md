@@ -13,9 +13,9 @@ In the profile section, users can view their Google sign-in details along with a
 ## Screenshots
 
 <p float="left">
-  <img src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/f79aa3d1-4af4-44de-827d-b6cb7d6c9910" width="200" /> 
-  <img src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/c4c71cdb-61eb-47bf-ac76-647f910ba4fa" width="200" />
-  <img src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/3f248eb1-7d10-4e3a-bbab-4812c4009ada" width="200" />
+  <img src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/cd748607-5c56-422c-ba87-1523c8452d50" width="200" /> 
+  <img src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/2137a02a-54c1-4213-8444-54a97f4f528b" width="200" />
+  <img src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/ed5d5560-1d07-4a34-9d00-36d8d28830e0" width="200" />
 </p>
 
 ## Install the APK
@@ -99,7 +99,7 @@ Authentication within Weather App is handled through Google Sign-In, using Fireb
 ## Folder Structure
 
 <p float="left">
-<img width="200" alt="weather-page-structure" src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/33d9a523-76f7-4c1c-a746-d3743da74d20">
+<img width="200" alt="weather-page-structure" src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/36aa0fd9-d311-4821-a371-1588d10f2814">
 </p>
 
 <!-- ![Folder structure](https://i.ibb.co/p0JBzCN/Screenshot-2023-11-07-at-3-42-03-AM.png) -->
