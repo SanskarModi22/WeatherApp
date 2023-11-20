@@ -1,8 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:weather_app/constants/color_const.dart';
 import 'package:weather_app/constants/custom_style.dart';
+import 'package:weather_app/pages/LogIn/login_page.dart';
 import 'package:weather_app/providers/auth_provider.dart';
+import 'package:weather_app/routes/app_router.gr.dart';
 import 'package:weather_app/utils/custom_button.dart';
 
 @RoutePage()
@@ -22,9 +25,10 @@ class _WeatherPageState extends ConsumerState<ProfileScreen> {
     final auth = ref.watch(authenticationProvider);
     var user = data.currentUser!;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile Screen'),
-      ),
+      backgroundColor: AppColor.appBGColor,
+      // appBar: AppBar(
+      //   title: const Text('Profile Screen'),
+      // ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -38,8 +42,9 @@ class _WeatherPageState extends ConsumerState<ProfileScreen> {
               style: kCityTextStyle,
             ),
             CustomButton(
-              onTap: () {
-                auth.signOut();
+              onTap: () async {
+                await auth.signOut();
+                AutoRouter.of(context).push(const LoginRoute());
               },
               text: 'Logout',
             ),

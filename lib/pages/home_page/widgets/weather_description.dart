@@ -2,7 +2,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_app/constants/color_const.dart';
-import 'package:weather_app/models/current_weather_model.dart';
 import 'package:weather_app/models/search_city_model.dart';
 
 class WeatherDescription extends StatelessWidget {

@@ -3,22 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather_app/constants/color_const.dart';
 
-import 'package:weather_app/main.dart';
-import 'package:weather_app/models/current_weather_model.dart';
+// import 'package:weather_app/main.dart';
+// import 'package:weather_app/models/current_weather_model.dart';
 import 'package:weather_app/models/search_city_model.dart';
-import 'package:weather_app/models/three_hours_model.dart';
+// import 'package:weather_app/models/three_hours_model.dart';
 import 'package:weather_app/pages/home_page/widgets/custom_app_bar.dart';
 import 'package:weather_app/pages/home_page/widgets/shimmer_widget.dart';
 import 'package:weather_app/pages/home_page/widgets/weather_card_widget.dart';
 import 'package:weather_app/pages/home_page/widgets/weather_description.dart';
-import 'package:weather_app/pages/home_page/widgets/weather_forecast.dart';
+// import 'package:weather_app/pages/home_page/widgets/weather_forecast.dart';
 import 'package:weather_app/providers/auth_provider.dart';
-import 'package:weather_app/providers/currentWeather/current_weather_provider.dart';
-import 'package:weather_app/providers/currentWeather/current_weather_state.dart';
+// import 'package:weather_app/providers/currentWeather/current_weather_provider.dart';
+// import 'package:weather_app/providers/currentWeather/current_weather_state.dart';
 import 'package:weather_app/providers/searchcity/search_city_provider.dart';
 import 'package:weather_app/providers/searchcity/search_city_state.dart';
-import 'package:weather_app/providers/threehourlyweather/threehourly_weather_provider.dart';
-import 'package:weather_app/providers/threehourlyweather/threehourly_weather_state.dart';
+// import 'package:weather_app/providers/threehourlyweather/threehourly_weather_provider.dart';
+// import 'package:weather_app/providers/threehourlyweather/threehourly_weather_state.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -44,14 +44,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   //   );
   // }
 
-  loadedThreeHourlyData() {
-    Future.delayed(
-      Duration.zero,
-      () => ref
-          .read(threeHourlyWeatherProvider.notifier)
-          .threeHourlyWeather(name: 'agra'),
-    );
-  }
+  // loadedThreeHourlyData() {
+  //   Future.delayed(
+  //     Duration.zero,
+  //     () => ref
+  //         .read(threeHourlyWeatherProvider.notifier)
+  //         .threeHourlyWeather(name: 'agra'),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     String imgUrl = data.currentUser!.photoURL!;
     // Second variable to access the Logout Function
 
-    final location = ref.read(locationProvider);
+    // final location = ref.read(locationProvider);
     // loadedData(lat: location.latitude, long: location.longitude);
     // CurrentWeatherState currentWeatherList = ref.read(currentWeatherProvider);
     // ThreeHourlyWeatherState threeHourlyWeatherDataList =
@@ -80,54 +80,38 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               padding: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
               child: Column(
                 children: [
-                  SearchAnchor(builder:
-                      (BuildContext context, SearchController controller) {
-                    return SearchBar(
-                      controller: searchTextController,
-                      elevation: MaterialStateProperty.all(0),
-                      hintText: 'Enter city name (eg. myanmar...)',
-                      hintStyle: MaterialStateProperty.all(
-                        const TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'OpenSans',
+                  SearchBar(
+                    controller: searchTextController,
+                    elevation: MaterialStateProperty.all(0),
+                    hintText: 'Enter city name (eg. Bengaluru...)',
+                    hintStyle: MaterialStateProperty.all(
+                      const TextStyle(
+                        fontSize: 14,
+                        fontFamily: 'OpenSans',
+                      ),
+                    ),
+                    backgroundColor:
+                        MaterialStateProperty.all(const Color(0xFFF3F6FB)),
+                    padding: const MaterialStatePropertyAll<EdgeInsets>(
+                        EdgeInsets.symmetric(horizontal: 16.0)),
+                    trailing: [
+                      IconButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                            Colors.blue.shade100,
+                          ),
+                        ),
+                        onPressed: () {
+                          searchCity.searchCity(
+                              name: searchTextController.text.trim());
+                        },
+                        icon: const Icon(
+                          CupertinoIcons.search,
+                          size: 20,
                         ),
                       ),
-                      backgroundColor:
-                          MaterialStateProperty.all(const Color(0xFFF3F6FB)),
-                      padding: const MaterialStatePropertyAll<EdgeInsets>(
-                          EdgeInsets.symmetric(horizontal: 16.0)),
-                      trailing: [
-                        IconButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(
-                              Colors.blue.shade100,
-                            ),
-                          ),
-                          onPressed: () {
-                            searchCity.searchCity(
-                                name: searchTextController.text);
-                          },
-                          icon: const Icon(
-                            CupertinoIcons.search,
-                            size: 20,
-                          ),
-                        ),
-                      ],
-                    );
-                  }, suggestionsBuilder:
-                      (BuildContext context, SearchController controller) {
-                    return List<ListTile>.generate(5, (int index) {
-                      final String item = 'item $index';
-                      return ListTile(
-                        title: Text(item),
-                        onTap: () {
-                          // setState(() {
-                          //   controller.closeView(item);
-                          // });
-                        },
-                      );
-                    });
-                  }),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -179,18 +163,18 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     );
   }
 
-  Widget _buildThreeHourlyWeatherResult(
-      ThreeHourlyWeatherState threeHourlyWeatherState) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: switch (threeHourlyWeatherState) {
-        ThreeHourlyWeatherLoading() => const SizedBox(),
-        ThreeHourlyWeatherSuccess(
-          threeHoursModel: ThreeHoursModel threeHourData
-        ) =>
-          WeatherForecast(threeHourlyWeatherData: threeHourData),
-        ThreeHourlyWeatherFailure(errorMessage: String error) => Text(error),
-      },
-    );
-  }
+  // Widget _buildThreeHourlyWeatherResult(
+  //     ThreeHourlyWeatherState threeHourlyWeatherState) {
+  //   return Padding(
+  //     padding: const EdgeInsets.symmetric(horizontal: 15),
+  //     child: switch (threeHourlyWeatherState) {
+  //       ThreeHourlyWeatherLoading() => const SizedBox(),
+  //       ThreeHourlyWeatherSuccess(
+  //         threeHoursModel: ThreeHoursModel threeHourData
+  //       ) =>
+  //         WeatherForecast(threeHourlyWeatherData: threeHourData),
+  //       ThreeHourlyWeatherFailure(errorMessage: String error) => Text(error),
+  //     },
+  //   );
+  // }
 }
