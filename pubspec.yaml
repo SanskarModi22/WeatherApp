@@ -8,23 +8,17 @@ environment:
 
 dependencies:
   auto_route: ^7.8.4
-  cached_network_image: ^3.3.0
   cupertino_icons: ^1.0.6
-  dio: ^5.3.3
   firebase_auth: ^4.14.0
   firebase_core: ^2.22.0
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.1.0
   flutter_riverpod: ^2.4.6
-  flutter_svg: ^2.0.9
-  fpdart: ^1.1.0
   google_sign_in: ^6.1.6
   http: ^1.1.0
   intl: ^0.18.1
-  json_annotation: ^4.8.1
   logger: ^2.0.2+1
-  shared_preferences: ^2.2.2
   shimmer: ^3.0.0
 
 dev_dependencies:
@@ -33,7 +27,6 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  json_serializable: ^6.7.1
 
 flutter:
   uses-material-design: true
@@ -41,16 +34,6 @@ flutter:
     - .env
     - assets/
     - assets/images/
-  #   - images/a_dot_ham.jpeg
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
   fonts:
     - family: Raleway
       fonts:
