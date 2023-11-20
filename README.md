@@ -12,19 +12,24 @@ In the profile section, users can view their Google sign-in details along with a
 
 ## Screenshots
 
+<p float="left">
+  <img src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/f79aa3d1-4af4-44de-827d-b6cb7d6c9910" width="200" /> 
+  <img src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/c4c71cdb-61eb-47bf-ac76-647f910ba4fa" width="200" />
+  <img src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/3f248eb1-7d10-4e3a-bbab-4812c4009ada" width="200" />
+</p>
 
 ## Install the APK
 
 You can install the Nova Weather App on your Android device by downloading the APK file from the following link:
 
-<!-- [Download Nova Weather App APK](https://drive.google.com/file/d/13tXM2MisO4tMfSzgp3VckGtatceKZcF8/view?usp=sharing) -->
+[Download Weather App APK](https://drive.google.com/file/d/1JgFJCNe0PN93HzKpfxBL0LwZwd1Y00vW/view?usp=drive_link)
 
 
 ## Screen Recording
 
 To get an overview of the Nova Weather App's features and functionality, you can watch a screen recording by following this link:
 
-<!-- [View Screen Recording](https://drive.google.com/file/d/1Vym0SE_-0Bba-e1hfiVrmY_5SJYWl51B/view?usp=sharing) -->
+[View Screen Recording](https://drive.google.com/file/d/1T_dRSXPJDlZViD6MTkht8GdyBuRQo2sf/view?usp=drive_link)
 
 ## Packages/Imports Used
 
@@ -92,6 +97,10 @@ Authentication within Nova Weather App is handled through Google Sign-In, using 
 - **AuthChecker:** Orchestrates these authentication-related components, ensuring a smooth user experience by handling login and navigation between the login page and home page based on the user's authentication status.
 
 ## Folder Structure
+
+<p float="left">
+<img width="200" alt="weather-page-structure" src="https://github.com/SanskarModi22/WeatherApp/assets/80542560/33d9a523-76f7-4c1c-a746-d3743da74d20">
+</p>
 
 <!-- ![Folder structure](https://i.ibb.co/p0JBzCN/Screenshot-2023-11-07-at-3-42-03-AM.png) -->
 
