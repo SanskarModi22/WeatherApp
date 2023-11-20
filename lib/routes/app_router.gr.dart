@@ -9,10 +9,10 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
+import 'package:weather_app/components/navigation_bar_widget.dart' as _i3;
 import 'package:weather_app/pages/LogIn/auth_check.dart' as _i1;
 import 'package:weather_app/pages/LogIn/login_page.dart' as _i2;
-import 'package:weather_app/pages/profile_page/weather_page.dart' as _i4;
-import 'package:weather_app/utils/navigation_bar_widget.dart' as _i3;
+import 'package:weather_app/pages/profile_page/profile_page.dart' as _i4;
 
 abstract class $AppRouter extends _i5.RootStackRouter {
   $AppRouter({super.navigatorKey});

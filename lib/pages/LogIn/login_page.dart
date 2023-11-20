@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weather_app/constants/color_const.dart';
 import 'package:weather_app/constants/custom_style.dart';
-import 'package:weather_app/pages/profile_page/weather_page.dart';
+import 'package:weather_app/pages/profile_page/profile_page.dart';
 import 'package:weather_app/providers/auth_provider.dart';
 import 'package:weather_app/repositories/auth_repo.dart';
 import 'package:weather_app/routes/app_router.gr.dart';

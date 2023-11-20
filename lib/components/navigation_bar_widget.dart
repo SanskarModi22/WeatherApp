@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_app/constants/color_const.dart';
 import 'package:weather_app/pages/home_page/home_screen.dart';
-import 'package:weather_app/pages/profile_page/weather_page.dart';
+import 'package:weather_app/pages/profile_page/profile_page.dart';
 
 @RoutePage()
 class NavigationBarWidget extends StatefulWidget {
