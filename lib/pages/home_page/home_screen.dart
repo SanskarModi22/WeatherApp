@@ -2,23 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather_app/constants/color_const.dart';
-
-// import 'package:weather_app/main.dart';
-// import 'package:weather_app/models/current_weather_model.dart';
 import 'package:weather_app/models/search_city_model.dart';
-// import 'package:weather_app/models/three_hours_model.dart';
 import 'package:weather_app/pages/home_page/widgets/custom_app_bar.dart';
 import 'package:weather_app/pages/home_page/widgets/shimmer_widget.dart';
 import 'package:weather_app/pages/home_page/widgets/weather_card_widget.dart';
 import 'package:weather_app/pages/home_page/widgets/weather_description.dart';
-// import 'package:weather_app/pages/home_page/widgets/weather_forecast.dart';
 import 'package:weather_app/providers/auth_provider.dart';
-// import 'package:weather_app/providers/currentWeather/current_weather_provider.dart';
-// import 'package:weather_app/providers/currentWeather/current_weather_state.dart';
 import 'package:weather_app/providers/searchcity/search_city_provider.dart';
 import 'package:weather_app/providers/searchcity/search_city_state.dart';
-// import 'package:weather_app/providers/threehourlyweather/threehourly_weather_provider.dart';
-// import 'package:weather_app/providers/threehourlyweather/threehourly_weather_state.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -58,14 +49,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final searchCity = ref.read(searchCityWeatherProvider.notifier);
     final data = ref.watch(fireBaseAuthProvider);
     String imgUrl = data.currentUser!.photoURL!;
-    // Second variable to access the Logout Function
-
-    // final location = ref.read(locationProvider);
-    // loadedData(lat: location.latitude, long: location.longitude);
-    // CurrentWeatherState currentWeatherList = ref.read(currentWeatherProvider);
-    // ThreeHourlyWeatherState threeHourlyWeatherDataList =
-    //     ref.watch(threeHourlyWeatherProvider);
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColor.appBGColor,
@@ -115,7 +98,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             ),
             _buildCurrentWeatherResult(searchWeatherData),
-            // _buildThreeHourlyWeatherResult(threeHourlyWeatherDataList),
           ],
         ),
       ),
