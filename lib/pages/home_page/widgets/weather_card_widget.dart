@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weather_app/constants/color_const.dart';
 import 'package:weather_app/models/search_city_model.dart';
 import 'package:weather_app/pages/home_page/widgets/date_time_widget.dart';
@@ -121,6 +122,10 @@ extension on String {
         return 'assets/images/windy.png';
       case 'Mist':
         return 'assets/images/light_rain.png';
+      case 'Haze':
+        return 'assets/images/haze.png';
+      case 'Smoke':
+        return 'assets/images/smog-solid.png';
       default:
         return '?';
     }
