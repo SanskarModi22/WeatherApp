@@ -156,25 +156,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               // const WeatherForecast(),
             ],
           ),
-        SearchWeatherFailure(errorMessage: String error) => Center(
-            child: Text(error),
+        SearchWeatherFailure(errorMessage: String error) => const Center(
+            child: Padding(
+              padding: EdgeInsets.only(top: 80.0),
+              child: Text(
+                "City Entered doesnot exist.\n        Please try again!!",
+                style: TextStyle(color: Colors.red, fontSize: 20),
+              ),
+            ),
           ),
       },
     );
   }
-
-  // Widget _buildThreeHourlyWeatherResult(
-  //     ThreeHourlyWeatherState threeHourlyWeatherState) {
-  //   return Padding(
-  //     padding: const EdgeInsets.symmetric(horizontal: 15),
-  //     child: switch (threeHourlyWeatherState) {
-  //       ThreeHourlyWeatherLoading() => const SizedBox(),
-  //       ThreeHourlyWeatherSuccess(
-  //         threeHoursModel: ThreeHoursModel threeHourData
-  //       ) =>
-  //         WeatherForecast(threeHourlyWeatherData: threeHourData),
-  //       ThreeHourlyWeatherFailure(errorMessage: String error) => Text(error),
-  //     },
-  //   );
-  // }
 }
