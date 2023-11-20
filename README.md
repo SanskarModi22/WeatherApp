@@ -90,11 +90,11 @@ https://api.openweathermap.org/data/2.5/weather?id={city id}&appid={API key}
 
 Authentication within Nova Weather App is handled through Google Sign-In, using Firebase. The project includes the following components to manage authentication states:
 
-- **Authentication Provider:** Responsible for authentication methods and user information.
+- **Authentication Provider:**(auth_provider) Responsible for authentication methods and user information.
 
-- **Authentication State Provider:** Manages states such as loading, errors, the login page, and the home page. This provider tracks the user's authentication status.
+- **Authentication State Provider:**(stream auth changes) Manages states such as loading, errors, the login page, and the home page. This provider tracks the user's authentication status.
 
-- **AuthChecker:** Orchestrates these authentication-related components, ensuring a smooth user experience by handling login and navigation between the login page and home page based on the user's authentication status.
+- **AuthChecker:**(auth_checker) Manages these authentication-related components, ensuring a smooth user experience by handling login and navigation between the login page and home page based on the user's authentication status.
 
 ## Folder Structure
 
